@@ -1,0 +1,103 @@
+﻿
+html, body {
+    margin: 0;
+    height: 100%;
+    font-size: 14px;
+    font-family: Tajawal;
+}
+
+
+*:focus {
+    outline: none !important;
+   
+}
+
+
+.div-main-login {
+    background-color: #1A79AC;
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+ 
+}
+
+.div-login {
+    width: 40%;
+    min-width: 280px;
+    max-width: 340px;
+    /*height: 80%;*/
+    min-height: 388px;
+    /*max-height: 472px;*/
+    max-height: 90%;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px #00000019;
+}
+
+
+.div-loginForm > span, input {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Tajawal;
+}
+
+.lbl-loginForm {
+    color: #828C96;
+    margin-top: 22px;
+    font-family: Tajawal-Bold !important;
+}
+
+.lbl-account {
+    color: #828C96;
+    font-size: 12px;
+}
+
+.div-loginForm > span > a {
+    display: inline-block;
+    font-weight: normal;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 7px;
+    color: #828C96;
+}
+    .div-loginForm > span > a:hover {
+        text-decoration: underline;
+    }
+
+#btnSubmit:hover{
+    background-color:gray;
+}
+
+.div-loginForm > input {
+    background-color: #F8F8F9;
+    border-radius: 5px;
+    height: 43px;
+    color: #828C96;
+    border: 0px;
+    margin-top: 7px;
+    padding: 0px 15px;
+}
+
+
+.btn-login {
+    background-color: #107AAC;
+    color: #fff;
+    border-radius: 5px;
+    height: 40px;
+    width: 98px;
+    border: 0px;
+    font-size: 15px;
+    margin: 17px auto;
+    font-family: Tajawal-Bold;
+}
+
+.div-message {
+    margin: 10px auto;
+    width: 80%;
+    color: red;
+}

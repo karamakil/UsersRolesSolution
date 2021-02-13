@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+@model UsersRoles.Models.User;
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/Login.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="div-main-login">
+        <div class="div-login">
+            <form asp-controller="Account" asp-action="Login" method="post">
+                <div class="div-loginForm">
+
+                    <h1>@TempData["IsRegistered"] </h1>
+
+                    <span class="lbl-loginForm">Username:</span>
+                    <input asp-for="UserName" required="required" type="text" id="txtUsername" name="username" placeholder="Username" />
+
+                    <span class="lbl-loginForm">Password:</span>
+                    <input asp-for="Password" required="required" type="password" id="txtPassword" name="password" placeholder="Password" />
+
+                    <span class="lbl-account mt-3">
+                        <a href="@Url.Action("Register", "Account")" class="txt1">Register</a>&nbsp;|&nbsp;
+                    </span>
+
+                </div>
+                <div class="mt-3">
+                    <button id="btnSubmit" class="btn-login ml-4 " type="submit">Login</button>
+                </div>
+                <div class="div-message">
+                    <Label ID="lblException" CssClass="label-inputException"> @ViewBag.Result</Label>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

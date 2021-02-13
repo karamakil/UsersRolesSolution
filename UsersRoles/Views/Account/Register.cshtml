@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Register";
+    if (ViewBag.IsAuth != null || User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = null;
+    }
+}
+@model UsersRoles.Models.User;
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/css/Login.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="div-main-login">
+        <div class="div-login">
+            <form asp-controller="Account" asp-action="Register" method="post">
+                <div class="div-loginForm">
+
+                    <span class="lbl-loginForm">Username:</span>
+                    <input asp-for="UserName" required="required" type="text" id="txtUsername" name="username" placeholder="Username" />
+
+                    <span class="lbl-loginForm">Password:</span>
+                    <input asp-for="Password" required="required" type="password" id="txtPassword" name="password" placeholder="Password" />
+
+                    <span class="lbl-loginForm">Confirm password:</span>
+                    <input required="required" type="password" id="txtConfirmPassword" placeholder="Confirm password" />
+
+                    <span class="lbl-loginForm">Email:</span>
+                    <input asp-for="Email" required="required" type="email" id="txtEmail" name="Email" placeholder="Email" />
+
+                    <span class="lbl-loginForm">Phone Number:</span>
+                    <input asp-for="PhoneNumber" required="required" type="number" id="txtPhoneNumber" name="PhoneNumber" placeholder="Phone number" />
+
+                </div>
+                <div class="mt-3">
+                    <button id="btnSubmit" class="btn-login ml-4 "   type="submit">Submit</button>
+                </div>
+                <div class="div-message">
+                    <Label ID="lblException" CssClass="label-inputException"> @ViewBag.Result</Label>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/Register.js"></script>
+</body>
+</html>
+
